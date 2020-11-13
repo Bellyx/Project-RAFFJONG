@@ -34,10 +34,10 @@ require_once("func.php");
 				<div class="item">
 					<label for="register_fb">เวลาเข้าร้าน</label>
 					<div class="radiogroups g-input icon-alarm border">
-						<label><input name="t" type="radio" value="10" <?php if($time_d=="00"){ echo "checked";} ?> >&nbsp;18.00 น.</label>
-						<label><input name="t" type="radio" value="11" <?php if($time_d=="30"){ echo "checked";} ?> >&nbsp;18.30 น.</label>
-						<label><input name="t" type="radio" value="13" <?php if($time_d=="00"){ echo "checked";} ?> >&nbsp;19.00 น.</label>
-						<label><input name="t" type="radio" value="14" <?php if($time_d=="30"){ echo "checked";} ?> >&nbsp;19.30 น.</label>		
+						<label><input name="t" type="radio" value="18" <?php if($time_d=="00"){ echo "checked";} ?> >&nbsp;18.00 น.</label>
+						<label><input name="t" type="radio" value="18" <?php if($time_d=="30"){ echo "checked";} ?> >&nbsp;18.30 น.</label>
+						<label><input name="t" type="radio" value="19" <?php if($time_d=="00"){ echo "checked";} ?> >&nbsp;19.00 น.</label>
+						<label><input name="t" type="radio" value="19" <?php if($time_d=="30"){ echo "checked";} ?> >&nbsp;19.30 น.</label>		
 					</div>
 					
 				</div>
@@ -51,7 +51,7 @@ require_once("func.php");
 				<div class="item">
 					<label for="register_username">ชื่อเล่น</label>
 					<span class="g-input icon-user">
-						<input type="text" name="name" value="<?=$nname;?>" required="">
+						<input type="text" name="nname" value="<?=$nname;?>" required="">
 					</span>
 					<div class="comment invalid" id="result_register_username">ใส่ชื่อของลูกค้า</div>
 				</div>
@@ -66,7 +66,7 @@ require_once("func.php");
 				<div class="item">
 					<label for="register_username">เบอร์โทรติดต่อ</label>
 					<span class="g-input icon-phone">
-						<input type="text" name="phone" value="<?=$phone;?>">
+						<input type="text" name="phone" value="<?=$phone;?>" required="">
 					</span>
 					<div class="comment invalid" id="result_register_username">ใส่เบอร์โทรศัพท์ของลูกค้าที่สามารถติดต่อได้</div>
 				</div>
@@ -95,7 +95,7 @@ require_once("func.php");
 						<input type="text" name="name" value="<?=$name;?>"  hidden="">
 						<input type="text" name="nname" value="<?=$nname;?>"  hidden="">
 						<input type="text" name="ppl" value="<?=$ppl;?>"      hidden="">
-						<input type="text" name="pone" value="<?=$$phone;?>"   hidden="">
+						<input type="text" name="phone" value="<?=$$phone;?>"   hidden="">
 						<input type="text" name="phone2" value="<?=$$phone2;?>"  hidden="">
 					<a name="s2"></a>
 					<center><br><h3 class="color-red">เลือกที่นั่ง</h3><img src="images/screen.png" width="90%"></center>

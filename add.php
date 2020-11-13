@@ -15,12 +15,12 @@ require_once("load.php");
 <meta charset="utf-8">
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>RAFFJONG</title>
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.png">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 
-<body class="responsive ">
+<body class="responsive">
 	<?php
 	//echo $resultArray[$e];
 	?>
@@ -36,7 +36,7 @@ require_once("load.php");
 	</div>
 	<div class="center" style="width: 50%; margin: 0 auto; padding: 20px; font-size: 30px;">
 				
-		เลขที่นั่ง  <br><font style="font-weight: bold; font-size: 80px;"><?=$e;?></font>
+		โต๊ะที่จอง  <br><font style="font-weight: bold; font-size: 80px;"><?=$e;?></font>
 	</div>
 	<center><span class="color-red">กรุณาแคปภาพหน้าจอ เพื่อใช้ยืนยันกับเจ้าหน้าที่</span></center>
 		<fieldset class="center submit"><button class=" save button" type="button" onclick="location.href='index.php'">เสร็จสิ้น</button></fieldset>

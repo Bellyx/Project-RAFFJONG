@@ -5,7 +5,7 @@ require_once("../load.php");
 @$nname 	= $_GET['nname'];
 @$ppl 		= $_GET['ppl'];
 @$phone     = $_GET['phone'];
-@$phone2     = $_GET['phone2'];
+@$phone2    = $_GET['phone2'];
 
 $sql_ = select("select * from list where name LIKE '%$_GET[search]%' order by id desc");
 	//$chk = $sql_[0];
@@ -43,7 +43,7 @@ $sql_ = select("select * from list where name LIKE '%$_GET[search]%' order by id
 		<th id="c4" class="center">จำนวนลูกค้า</th>
 		<th id="c5" class="center" >ที่นั่ง</th>
 		<th id="c6" class="center" >เบอร์โทรติดต่อ</th>
-		<th id="c7" class="center" >เบอร์โทรติดต่อสำรอง</th>
+		<th id="c7" class="center" >วันที่จอง</th>
 		<th id="c8"></th></tr>
 </thead>
 <tbody>
@@ -52,14 +52,15 @@ for($i=0;$i<count($sql_);$i++){
 	$data = $sql_[$i];
 ?>
 	<tr id="datatable_244" class="sort">
-		<th data-text="ชื่อ" id="r244" headers="c0"><?=$i+1;?></th>
-<th data-text="ชื่อ" id="r244" headers="c0"><?=$data['name'];?></th>
+<th data-text="ชื่อ" id="r244" headers="c0"><?=$i+1;?></th>
+<th class ="center" data-text="ชื่อ" id="r244" headers="c0"><?=$data['name'];?></th>
 
 <td class="center" ><?=$data['nname'];?></td>
 
 <td class="center" ><?=$data['time_d'];?>.00 น.</td>
 <td class="center" ><?=$data['ppl'];?></td>
 <td class="center" ><?=$data['e'];?></td>
+<td class="center" headers="c6" ><?=$data['phone'];?></td>
 <td class="center" ><?php echo thai_date_and_time($data['t']);?></td>
 <td  class="buttons" ><a class="button red" href="index.php?del=<?=$data['id'];?>"><span class=" button_w_text"><span class="mobile">ลบ</span></span></a></td>
 </tr>
