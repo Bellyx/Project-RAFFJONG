@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+body{
+    font-family:'Poppins',sans-serif ;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding: 70px 0;
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+.menu,
+.content{
+    width: 100%;
+}
+select{
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppinss',sans-serif;
+    border: none;
+    border-radius: 8px;
+    border: 2px solid #3f3f3f;
+    appearance: none;
+    background: #e8eaf6;
+    background-position: 95% 55%;
+    background-size: 22px;
+}
+.content{
+    margin: 30px 0;
+}
+.content .data{
+    padding: 25px;
+    background-color: #ffffff;
+    border: 2px solid #8bc34a;
+    border-radius: 8px;
+}
+.content p{
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro ;
+}
+.content p:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.content p b {
+    font-weight: 700;
+}
+.content p span{
+    float: right;
+    font-weight: normal;
+}
+.image{
+    text-align: center;
+}
+.data{
+    display: none;
+}
+/*css for  button */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+
+.wrapper .btns{
+  display: flex;
+  place-items: center;
+  margin: 30px 0 20px 0;
+}
+.jong{
+    text-align: center;
+}
+.btns a{
+  position: relative;
+  margin: 0 65px;
+  height: 70px;
+  width: 200px;
+  display: block;
+  line-height: 70px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.btns a:first-child{
+  background: linear-gradient(-90deg, #f5ce62, #e85a19);
+}
+.btns a:last-child{
+  background: linear-gradient(90deg, #0162c8, #55e7fc);
+}
+.btns a > span{
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ripples 0.6s linear infinite;
+}
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
+}

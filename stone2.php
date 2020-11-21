@@ -26,11 +26,11 @@ require_once("func.php");
 </head>
 
 <body class="responsive ">
-	<center><h1 class="color-white" style="padding-top: 20px; padding-bottom: 20px;">บ้านสวนลุงบ๊อบ<br>
+	<center><h1 class="color-white" style="padding-top: 20px; padding-bottom: 20px;">KingkongPub<br>
 	</h1></center>
     <div style="width: 90%; margin: 0 auto; background-color: #FFF; border-radius: 20px; padding-top: 10px; padding-bottom: 10px;">
 		<?php if(empty($time_d)){?>
-			<form method="post"  action="index.php#s2">
+			<form method="post"  action="stone2.php#s2">
 				<div class="item">
 					<label for="register_fb">เวลาเข้าร้าน</label>
 					<div class="radiogroups g-input icon-alarm border">

@@ -108,7 +108,7 @@ function chk_($num){
 	$sql_ = select("select * from seat where num='$num' ");
 	$chk = $sql_[0];
 	if($chk['status']=="1"){
-		echo "<img src='images/com.png'>";
+		echo "<img src='images/com.png'>";  /*แก้รูปที่คลิกแทนคนนั่ง */
 	}
 }
 ?>

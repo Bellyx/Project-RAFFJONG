@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/stylec.css">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <title>เลือกร้าน</title>
+</head>
+<body>
+  
+    <div class="wrapper">
+        <div class="menu">
+            <select id="name">
+                <option value="1">บ้านสวนลุงบ๊อบ</option>
+                <option value="2">KingkongPub</option>
+                <option value="3">ร้านที่ 3</option>
+            </select>
+        </div>
+   
+   <div class="content">
+       <div id="1"class="data">
+        <p class="image"><img src="https://cdn.discordapp.com/attachments/775368103230963724/779724599209361440/BOB.png" width="50%" alt=""></p>
+           <p><b>รายละเอียดร้าน</b><span>บ้านสวนลุงบ๊อบ</span></p>
+           <p><b>เวลาเปิด-ปิด</b><span>17.00-00.30 </span></p>
+           <p><b>จำนวนโต๊ะ</b><span>27 โต๊ะ</span></p>
+           <p><b>เบอร์โทร</b><span>098-2555555</span></p>
+           <div class="btns">
+               <div class="btns1">
+            <a class ="jong"href="http://localhost/cinema/index.php">จอง</a>     
+          </div>
+        </div>
+       </div>
+       <div id="2"class="data">
+        <p class="image"><img src="https://cdn.discordapp.com/attachments/775368103230963724/779737949729194034/kingkong.png" width="45%" alt=""></p>
+        <p><b>รายละเอียดร้าน</b><span>KingkongPub</span></p>
+        <p><b>เวลาเปิด-ปิด</b><span>17.00-00.30 </span></p>
+        <p><b>จำนวนโต๊ะ</b><span>120</span></p>
+        <p><b>เบอร์โทร</b><span>098-21111111</span></p>
+        <div class="btns">
+            <div class="btns1">
+         <a class ="jong"href="http://localhost/cinema/stone2.php">จอง</a>     
+       </div>
+     </div>
+       </div>
+       <div id="3"class="data">
+           <p class="image"><img src="https://pbs.twimg.com/profile_images/941027618710683648/KIwemuup.jpg" width="30%" alt=""></p>
+        <p><b>รายละเอียดร้าน</b><span>Hombar</span></p>
+        <p><b>เวลาเปิด-ปิด</b><span>17.00-00.30 น.</span></p>
+        <p><b>จำนวนโต๊ะ</b><span>50</span></p>
+        <p><b>เบอร์โทร</b><span>098-2222222</span></p>
+        <div class="btns">
+            <div class="btns1">
+         <a class ="jong"href="http://localhost/cinema/stone3.php">จอง</a>     
+       </div>
+     </div>
+       </div>
+
+   </div>
+</div>
+<!--scripts
+    ปิดฟังก์ชั่น ให้แสดง ในตัวเลือก เป็น dorpdown
+    โดยใช้ jquery
+    ลิ้ง script cdnjs.com
+-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+<script>
+     $(document).ready(function(){
+        $("#name").on('change',function(){
+           $(".data").hide();
+           $("#" + $(this).val()).fadeIn(700);
+        }).change();
+     });
+</script>
+<script>
+    const buttons = document.querySelectorAll("a");
+    buttons.forEach((button) => {
+      button.onclick = function(e){
+        let x = e.clientX - e.target.offsetLeft;
+        let y = e.clientY - e.target.offsetTop;
+        let ripple = document.createElement("span");
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        this.appendChild(ripple);
+        setTimeout(function(){
+          ripple.remove();
+        }, 600); // 1second = 1000ms
+      }
+    });
+
+    </script>
+
+  </body>  
+</body>
+</html>

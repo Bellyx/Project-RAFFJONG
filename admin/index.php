@@ -41,9 +41,9 @@ $sql_ = select("select * from list where name LIKE '%$_GET[search]%' order by id
 		<th id="c2" class="center">ชื่อเล่น</th>
 		<th id="c3" class="center">เวลาเข้าร้าน</th>
 		<th id="c4" class="center">จำนวนลูกค้า</th>
-		<th id="c5" class="center" >ที่นั่ง</th>
-		<th id="c6" class="center" >เบอร์โทรติดต่อ</th>
-		<th id="c7" class="center" >วันที่จอง</th>
+		<th id="c5" class="center">ที่นั่ง</th>
+		<th id="c6" class="center">เบอร์โทรติดต่อ</th>
+		<th id="c7" class="center">วันที่จอง</th>
 		<th id="c8"></th></tr>
 </thead>
 <tbody>
@@ -60,7 +60,7 @@ for($i=0;$i<count($sql_);$i++){
 <td class="center" ><?=$data['time_d'];?>.00 น.</td>
 <td class="center" ><?=$data['ppl'];?></td>
 <td class="center" ><?=$data['e'];?></td>
-<td class="center" headers="c6" ><?=$data['phone'];?></td>
+<td class="center" ><?=$data['phone'];?></td>
 <td class="center" ><?php echo thai_date_and_time($data['t']);?></td>
 <td  class="buttons" ><a class="button red" href="index.php?del=<?=$data['id'];?>"><span class=" button_w_text"><span class="mobile">ลบ</span></span></a></td>
 </tr>
@@ -74,7 +74,7 @@ for($i=0;$i<count($sql_);$i++){
 </html>
 <?php
 if(!empty($_GET['del'])){
-	$sql_2 = select("select * from list where id=$data[id]");
+	$sql_2 = select("select * from list where id=$data[id]"+ "SELECT * FROM `list2` WHERE 1");
 	$mm=$sql_2[0];
 
 	for($r=0;$r<count($mm);$r++){
@@ -87,6 +87,8 @@ if(!empty($_GET['del'])){
 
 	delete('list',"id= $_GET[del]");
 	?>
+	<meta HTTP-EQUIV="REFRESH" CONTENT="0; URL=index.php">
+	<meta HTTP-EQUIV="REFRESH" CONTENT="0; URL=stone2.php">
 	<meta HTTP-EQUIV="REFRESH" CONTENT="0; URL=index.php">
 	<?php
 }

@@ -38,7 +38,7 @@ require_once("load.php");
 				
 		โต๊ะที่จอง  <br><font style="font-weight: bold; font-size: 80px;"><?=$e;?></font>
 	</div>
-	<center><span class="color-red">กรุณาแคปภาพหน้าจอ เพื่อใช้ยืนยันกับเจ้าหน้าที่</span></center>
+	<center><span class="color-red"><br>ฟรี Mixser 2 ขวด</br>กรุณาแคปภาพหน้าจอ เพื่อใช้ยืนยันกับเจ้าหน้าที่</span></center>
 		<fieldset class="center submit"><button class=" save button" type="button" onclick="location.href='index.php'">เสร็จสิ้น</button></fieldset>
 		
 	</div><br>

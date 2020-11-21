@@ -26,8 +26,8 @@ require_once("func.php");
 </head>
 
 <body class="responsive ">
-	<center><h1 class="color-white" style="padding-top: 20px; padding-bottom: 20px;">บ้านสวนลุงบ๊อบ<br>
-	</h1></center>
+	<center><h1 class="color-white" style="padding-top: 20px; padding-bottom: 20px;">RAFF JONG<br>
+	(RAFF_HANG)</h1></center>
     <div style="width: 90%; margin: 0 auto; background-color: #FFF; border-radius: 20px; padding-top: 10px; padding-bottom: 10px;">
 		<?php if(empty($time_d)){?>
 			<form method="post"  action="index.php#s2">
@@ -81,7 +81,7 @@ require_once("func.php");
 				<fieldset class="center submit"><button class="btn btn-success "style="width:29%;" type="submit">บันทึกข้อมูล</button></fieldset>
 			
 			</form>
-			<?php } ?>
+		<?php } ?>
 			<?php if(!empty($time_d)){?>
 				<div style="width: 90%; padding: 20px; font-size: 30px;">
 		เวลาจอง   : <?=$time_d.".00 น.";?><br>
@@ -90,214 +90,161 @@ require_once("func.php");
 		จำนวนลูกค้า :  <?=$ppl;?><br>
 		เบอร์โทรติดต่อ : <?=$phone;?><br>
 	</div>
-	<form method="post"  action="save.php">
+			<form method="post"  action="save.php">
 						<input type="text" name="t" value="<?=$time_d;?>"  hidden="">
 						<input type="text" name="name" value="<?=$name;?>"  hidden="">
 						<input type="text" name="nname" value="<?=$nname;?>"  hidden="">
 						<input type="text" name="ppl" value="<?=$ppl;?>"      hidden="">
 						<input type="text" name="phone" value="<?=$$phone;?>"   hidden="">
 						<input type="text" name="phone2" value="<?=$$phone2;?>"  hidden="">
-						<a name="s2"></a>
-					<center><br><h3 class="color-red">กรุณาเลือกโต๊ะ</h3><img src="images/stage.png" width="50%"></center>
+					<a name="s2"></a>
+					<center><br><h3 class="color-red">เลือกที่นั่ง</h3><img src="images/screen.png" width="90%"></center>
 					<p id="pp"></p>
-
-					<!-- Zone vip 1 -->
+					
 					<table class="border center data" width="80%">
-						<tr style="height: 100px;">
-						<td class="right color-white bg-red" width="7%">Zone VIP</td>
+						<tr style="height: 80px;">
+						<td class="right color-white bg-red" width="7%">แถว A</td>
 							<?php
-								for ($i=6; $i >=4 ; $i--)
+								for ($i=30; $i >=26 ; $i--)
 									{ ?>
 										<td class="Center">
 											<?php
 											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d' ");
 											$chk = $sql_[0];
 											if(count($sql_)>0){ ?>
-												<img src='images/success_vip.png'><br>
+												<img src='images/com.png'><br>
 												<?=$i;?>
 											<?php }else{ ?>
 											<label>
-												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/table_vip.png">
-												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select_vip.png" style="display: none;"><br>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
+												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
 												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
 											</label>
-									
 										<?php } ?>
 										</td>
-										<?php
+									<?php
 									} ?>
-
-								<td class="center color-white bg-gray" width="7%">ทางเดิน</td>
-
-								<!-- Zone vip 2 -->
-								<?php
-								for ($i=3; $i >=1 ; $i--)
+							<td class="light  color-white bg-red" width="7%">แถว A</td>
+						</tr>
+						<tr style="height: 80px;">
+							<td class="right color-white bg-red" width="7%">แถว B</td>
+							<?php
+								for ($i=25; $i >=21 ; $i--)
 									{ ?>
-										<td class="Center">
+										<td class="center">
 											<?php
-											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d' ");
+											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d'");
 											$chk = $sql_[0];
 											if(count($sql_)>0){ ?>
-												<img src='images/success_vip.png'><br>
+												<img src='images/com.png'><br>
 												<?=$i;?>
 											<?php }else{ ?>
 											<label>
-											<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/table_vip.png">
-												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/Select_vip.png" style="display: none;"><br>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
+												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
 												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
-											</label>
-									
-
-
-										<?php } ?>
+											</label> <?php } ?>
 										</td>
-										<?php
+									<?php
 									} ?>
-
-							<td class="light  color-white bg-red" width="7%">Zone VIP</td>
+									<td class="light color-white bg-red" width="7%">แถว B</td>
 						</tr>
-				</table>
-
-			<!---------------------------------------------- ทางเดิน ---------------------------------------------------->					
-					<table class="border center data" width="80%"  >
-						<tr style="height: 0px;"></tr>
-						<td class="center color-white bg-green" width="7%">COUTER BAR</td>
-						<td class="center color-white bg-gray" width="18%"></td>
-						<td class="center color-white bg-green" width="7%">COUTER BAR</td>
+						<tr style="height: 80px;">
+							<td class="right color-white bg-red" width="7%">แถว C</td>
+							<?php
+								for ($i=20; $i >=16 ; $i--)
+									{ ?>
+										<td class="center">
+											<?php
+											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d'");
+											$chk = $sql_[0];
+											if(count($sql_)>0){ ?>
+												<img src='images/com.png'><br>
+												<?=$i;?>
+											<?php }else{ ?>
+											<label>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
+												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
+												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
+											</label><?php } ?>
+										</td>
+									<?php
+									} ?>
+									<td class="light color-white bg-red" width="7%">แถว C</td>
+						</tr>
 					</table>
-					<table class="border center data" width="80%"  >
-						<tr style="height: 0px;"></tr>
-						<td class="center color-white bg-gray" width="20%">ทางเดิน</td>
-					</table>
-			<!---------------------------------------------------------------------------------------------------------->
-
-				
-
-			<!--------------------------------------------- Zone A1 ---------------------------------------------------->
+					<br>
+					<br>
 					<table class="border center data" width="80%">
 						<tr style="height: 80px;">
-							<td class="center color-white bg-orange" width="7%">Zone A</td>
+							<td class="right color-white bg-red" width="7%">แถว D</td>
 							<?php
-								for ($i=13; $i >=7 ; $i--)
+								for ($i=15; $i >=11 ; $i--)
 									{ ?>
 										<td class="center">
 											<?php
 											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d'");
 											$chk = $sql_[0];
 											if(count($sql_)>0){ ?>
-												<img src='images/success.png'><br>
+												<img src='images/com.png'><br>
 												<?=$i;?>
 											<?php }else{ ?>
-												<label>
-												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/table.png">
+											<label>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
 												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
 												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
-											</label>
-											
-											 <?php } ?>
+											</label> <?php } ?>
 										</td>
 									<?php
 									} ?>
-
-							<td class="center  color-white bg-orange" width="7%">Zone A</td>
-							<td class="center color-white bg-gray" width="4%"></td>
+									<td class="light color-white bg-red" width="7%">แถว D</td>
+							
 						</tr>
-			<!---------------------------------------------------------------------------------------------------------->
-
-
-			<!---------------------------------------------- Zone A2 --------------------------------------------------->
 						<tr style="height: 80px;">
-							<td class="center color-white bg-orange" width="7%">Zone A</td>
+							<td class="right color-white bg-red" width="7%">แถว E</td>
 							<?php
-								for ($i=20; $i >=14 ; $i--)
+								for ($i=10; $i >=6 ; $i--)
 									{ ?>
 										<td class="center">
 											<?php
 											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d'");
 											$chk = $sql_[0];
 											if(count($sql_)>0){ ?>
-												<img src='images/success.png'><br>
+												<img src='images/com.png'><br>
 												<?=$i;?>
 											<?php }else{ ?>
-												<label>
-												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/table.png">
+											<label>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
 												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
 												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
-											</label>
-											
-											 <?php } ?>
+											</label><?php } ?>
 										</td>
 									<?php
 									} ?>
-									<td class="center color-white bg-orange" width="7%">Zone A</td>
-									<td class="center color-white bg-blue" width="4%"><span class="g-input icon-user"></td>
-									<td class="center color-white bg-blue" width="4%">ห้องน้ำ</td>
+								<td class="light color-white bg-red" width="7%">แถว E</td>	
 						</tr>
-					
-
-			<!---------------------------------------------------------------------------------------------------------->
-
-
-			<!---------------------------------------------- Zone A3 --------------------------------------------------->
-			<tr style="height: 80px;">
-							<td class="center color-white bg-orange" width="7%">Zone A</td>
+						<tr style="height: 80px;">
+							<td class="right color-white bg-red" width="7%">แถว F</td>
 							<?php
-								for ($i=27; $i >=21 ; $i--)
+								for ($i=5; $i >=1 ; $i--)
 									{ ?>
 										<td class="center">
 											<?php
-											$sql_ = select("select * from seat where num='$i' and time_d ='$time_d'");
+											$sql_ = select("select * from seat where num='$i' and time_d = $time_d ");
 											$chk = $sql_[0];
 											if(count($sql_)>0){ ?>
-												<img src='images/success.png'><br>
+												<img src='images/com.png'><br>
 												<?=$i;?>
 											<?php }else{ ?>
-												<label>
-												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/table.png">
+											<label>
+												<img onclick="img('1','<?=$i;?>');" id="<?=$i;?>c" src="images/chair.png">
 												<img onclick="img('0','<?=$i;?>');" id="<?=$i;?>s" src="images/select.png" style="display: none;"><br>
 												<input name="e[]" type="checkbox" value="<?=$i;?>" hidden="" ><?=$i;?>
-											</label>
-											
-											 <?php } ?>
+											</label><?php } ?>
 										</td>
 									<?php
 									} ?>
-									<td class="center color-white bg-orange" width="7%">Zone A</td>
-									<td class="center color-white bg-blue" width="4%"><span class="g-input icon-user"></td>
-									<td class="center color-white bg-blue" width="4%">ห้องน้ำ</td>
-						</tr>
-						
-
-			</table>
-			<!---------------------------------------------------------------------------------------------------------->
-
-
-			<!---------------------------------------------- ทางเดิน ---------------------------------------------------->					
-					<table class="border center data" width="80%"  >
-						<tr style="height: 0px;"></tr>
-						<td class="center color-white bg-green" width="7%">COUTER BAR</td>
-						<td class="center color-white bg-gray" width="18%"></td>
-						<td class="center color-white bg-green" width="7%">COUTER BAR</td>
-					</table>
-					<table class="border center data" width="80%"  >
-						<tr style="height: 0px;"></tr>
-						<td class="center color-white bg-gray" width="20%">ทางเดิน</td>
-					</table>
-			<!---------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-					<br>
-					<br>
-					
+									<td class="light color-white bg-red" width="7%">แถว F</td>
 						</tr>
 					</table>
 					
