@@ -30,9 +30,13 @@ CREATE TABLE IF NOT EXISTS `list` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
   `time_d` varchar(50) COLLATE utf8_bin NOT NULL,
   `name` varchar(200) COLLATE utf8_bin NOT NULL,
-  `school` varchar(200) COLLATE utf8_bin NOT NULL,
-  `e` varchar(50) COLLATE utf8_bin NOT NULL,
+  `nname` varchar(200) COLLATE utf8_bin NOT NULL,
+  `ppl` varchar(200) COLLATE utf8_bin NOT NULL,
   `t` varchar(50) COLLATE utf8_bin NOT NULL,
+  `e` varchar(50) COLLATE utf8_bin NOT NULL,
+  `phone` varchar(255) COLLATE utf8_bin NOT NULL,
+  `phone2` varchar(255) COLLATE utf8_bin NOT NULL,
+  
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
@@ -40,8 +44,10 @@ CREATE TABLE IF NOT EXISTS `list` (
 -- Dumping data for table `list`
 --
 
-INSERT INTO `list` (`id`, `time_d`, `name`, `school`, `e`, `t`) VALUES
-(1, '10', 'วสันต์  แสงม่วง', 'หนองม่วงวิทยา', '20,19,18,17', '1552657415');
+INSERT INTO `list` (`id`, `time_d`, `name`, `nname`, `ppl`, `t`,`e`,`phone`,`phone2`) VALUES
+(1, '19', 'admin', 'min', '10', '1552657415','12,13','1552657415','225541');
+
+
 
 -- --------------------------------------------------------
 
