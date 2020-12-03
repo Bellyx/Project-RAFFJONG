@@ -1,0 +1,7 @@
+วิธีการใช้ Source Code for Raffjong
+1. โหลด ตัวserver ที่ชื่อ Wamp  
+link https://sourceforge.net/projects/wampserver/files/
+
+2.เข้า localhost  user root   password ไม่ต้องใส่ครับ  จากนั้น กด OK
+3.สร้าง database ที่ชื่อ cinema จากนั้น นำไฟล์ cinima.sql import เข้าไป
+4.ใช้งานและทดสอบได้ปกติ
